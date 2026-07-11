@@ -1,6 +1,7 @@
 # DA-Open — DAClaw landing page
 
-The official GitHub Pages site for **DAClaw — Steerable Data Intelligence**.
+The official GitHub Pages site for **DAClaw — a steerable data agent and a
+full-stack data-agent research platform**.
 
 It is a zero-build static site (plain HTML/CSS/JS), so GitHub Pages can serve the
 repository root directly — no Jekyll, no bundler, no CI step.
