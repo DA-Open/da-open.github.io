@@ -228,6 +228,15 @@ code {
   color: var(--violet);
 }
 .button-lime:hover { background: rgba(181, 156, 255, 0.12); transform: translateY(-2px); }
+.button-github {
+  background: #f4f8ff;
+  color: #0e141e;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+.button-github svg { flex-shrink: 0; }
+.button-github:hover { transform: translateY(-2px); filter: brightness(1.02); box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45); }
+.button-github span { color: inherit; }
+.button-lg { padding: 16px 30px; font-size: 1.04rem; border-radius: 13px; }
 .text-link {
   display: inline-flex;
   align-items: center;
@@ -288,18 +297,23 @@ code {
 }
 .site-nav a:hover { color: var(--ink); }
 .site-nav a:hover::after { width: 100%; }
-.header-actions { display: flex; align-items: center; gap: 14px; }
+.header-actions { display: flex; align-items: center; gap: 12px; }
 .site-nav + .header-actions { margin-left: 0; }
-.header-github {
+.header-demo {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  color: var(--muted);
+  padding: 9px 15px;
+  border-radius: 10px;
   font-size: 0.9rem;
-  transition: color 0.2s;
+  font-weight: 600;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
 }
-.header-github:hover { color: var(--ink); }
-.header-cta {
+.header-demo span { color: var(--teal-bright); font-size: 0.78rem; }
+.header-demo:hover { color: var(--ink); border-color: var(--teal); background: rgba(84, 230, 209, 0.06); }
+.header-github-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -307,12 +321,12 @@ code {
   border-radius: 10px;
   font-weight: 600;
   font-size: 0.9rem;
-  border: 1px solid var(--line);
-  color: var(--ink);
-  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+  color: #04211f;
+  background: var(--grad-primary);
+  box-shadow: 0 8px 22px rgba(79, 140, 255, 0.24), 0 0 0 1px rgba(111, 241, 225, 0.16) inset;
+  transition: transform 0.2s var(--ease), filter 0.2s, box-shadow 0.2s;
 }
-.header-cta:hover { border-color: var(--teal); background: rgba(84, 230, 209, 0.08); transform: translateY(-1px); }
-.header-cta span { color: var(--teal-bright); }
+.header-github-btn:hover { transform: translateY(-1px); filter: brightness(1.07); box-shadow: 0 12px 30px rgba(79, 140, 255, 0.34); }
 .nav-toggle { display: none; }
 
 /* ---- Hero --------------------------------------------------------------- */
@@ -896,8 +910,15 @@ code {
 .cockpit-loop b { color: var(--teal); }
 
 /* ---- Demo / video ------------------------------------------------------- */
-.demo-heading { max-width: 720px; margin-bottom: 44px; }
+.demo-heading { max-width: 760px; margin-bottom: 44px; }
 .demo-heading p { color: var(--muted); font-size: 1.06rem; margin: 14px 0 0; }
+.demo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 34px;
+}
 .video-stage {
   position: relative;
   aspect-ratio: 16 / 9;
@@ -1065,7 +1086,6 @@ code {
     display: inline-flex;
     flex-direction: column;
     gap: 5px;
-    margin-left: auto;
     order: 3;
     width: 42px; height: 38px;
     align-items: center;
@@ -1102,14 +1122,16 @@ code {
   .site-nav a { padding: 12px 10px; border-radius: 10px; }
   .site-nav a:hover { background: var(--card); }
   .site-nav a::after { display: none; }
-  .header-github span { display: none; }
-  .header-cta { display: none; }
-  .header-actions { margin-left: 0; }
+  .header-demo { display: none; }
+  .header-github-btn { padding: 8px 13px; }
+  .header-github-btn span { display: none; }
+  .header-actions { margin-left: auto; order: 2; gap: 10px; }
   .statband { grid-template-columns: repeat(2, 1fr); }
   .cap-grid { grid-template-columns: 1fr; }
   .cockpit-stats { grid-template-columns: repeat(2, 1fr); }
   .metric-row { grid-template-columns: 80px 1fr 40px; }
   .wf-approve { margin-left: 0; }
   .float-pill { display: none; }
+  .demo-actions .button-lg { width: 100%; justify-content: center; }
   .site-footer > div { margin-left: 0; flex-wrap: wrap; }
 }

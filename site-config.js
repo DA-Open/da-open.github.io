@@ -3,5 +3,5 @@
 //   videoSrc: "assets/daclaw-demo.mp4"
 //   videoSrc: "https://cdn.example.com/daclaw-demo.mp4"
 window.DACLAW_SITE = {
-  videoSrc: "",
+  videoSrc: "assets/daclaw-demo.mp4",
 };
