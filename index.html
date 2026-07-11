@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="DAClaw is a steerable data agent and a full-stack data-agent research platform: compile a question into a validated workflow, execute grounded analysis, deliver dashboards, native Excel, dbt pipelines and narrated data videos — then measure every model and harness on one benchmark suite."
+      content="DAClaw is a steerable data agent and a full-stack data-agent research platform. It compiles one plain-language question into a typed, validated workflow, executes grounded analysis, and delivers dashboards, native Excel models, dbt pipelines, and narrated data videos — then benchmarks every model × harness across the whole data-agent stack."
     />
-    <meta name="theme-color" content="#f2eadb" />
+    <meta name="theme-color" content="#0f1622" />
     <meta property="og:title" content="DAClaw — Steerable Data Agent & Research Platform" />
     <meta
       property="og:description"
-      content="Connect & ground. Compile & steer. Execute & deliver. Then evaluate every model × harness on a full-stack data-agent benchmark suite."
+      content="Ask once. Watch the mission compile. One agent covers the full data stack — analysis, engineering, and evaluation — with a grounded evidence chain behind every number."
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="assets/video-poster.svg" />
@@ -20,13 +20,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="page-grain" aria-hidden="true"></div>
+    <div class="grid-bg" aria-hidden="true"></div>
+    <div class="glow glow-a" aria-hidden="true"></div>
+    <div class="glow glow-b" aria-hidden="true"></div>
     <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
     <header class="site-header">
@@ -39,89 +41,84 @@
       </button>
       <nav class="site-nav" aria-label="Primary navigation">
         <a href="#system">System</a>
+        <a href="#boards">Boards</a>
         <a href="#capabilities">Capabilities</a>
-        <a href="#product">Product</a>
+        <a href="#interface">Interface</a>
         <a href="#research">Research</a>
-        <a href="#demo">Demo</a>
       </nav>
-      <a class="header-cta" href="#demo">Watch the demo <span>↗</span></a>
+      <div class="header-actions">
+        <a
+          class="header-github"
+          href="https://github.com/DA-Open/DAClaw"
+          target="_blank"
+          rel="noopener"
+          aria-label="DAClaw on GitHub"
+        >
+          <svg viewBox="0 0 16 16" width="17" height="17" aria-hidden="true">
+            <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.65 7.65 0 012-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z" />
+          </svg>
+          <span>GitHub</span>
+        </a>
+        <a class="header-cta" href="#demo">Watch the film <span>▶</span></a>
+      </div>
     </header>
 
     <main id="top">
-      <section class="hero section-shell">
-        <div class="hero-orbit hero-orbit-one" aria-hidden="true"></div>
-        <div class="hero-orbit hero-orbit-two" aria-hidden="true"></div>
+      <section class="hero">
         <div class="hero-copy reveal">
-          <div class="eyebrow"><span>Steerable data agent · research platform</span><b>2026</b></div>
+          <div class="eyebrow"><i></i><span>Steerable data intelligence</span><b>2026</b></div>
           <h1>
             Ask once.<br />
-            <span>Watch the mission</span><br />
+            <span class="grad">Watch the mission</span><br />
             compile.
           </h1>
           <p class="hero-deck">
-            DAClaw turns one business question into a typed, validated workflow — and lets you inspect and
-            approve it before a single query runs. It executes grounded analysis and delivers dashboards,
-            reports, native workbooks, pipelines, and narrated data videos. It is also the
-            <em>research platform</em> that measures every model and harness across the full data-agent stack.
+            DAClaw compiles one plain-language question into a typed, validated workflow — inspectable and
+            approvable before a single query runs. It executes grounded analysis and delivers dashboards,
+            native Excel models, dbt pipelines, and narrated data videos. One agent, the full data stack.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#demo">Play product film <span>▶</span></a>
-            <a class="button button-ghost" href="#research">See the research lab <span>↓</span></a>
+            <a class="button button-primary" href="#demo">Play the product film <span>▶</span></a>
+            <a class="button button-ghost" href="#research">Open the research lab <span>↓</span></a>
           </div>
-          <div class="hero-proof" aria-label="Product highlights">
-            <span>Approve &amp; run plans</span>
-            <span>Per-node evidence</span>
-            <span>Model × harness benchmarks</span>
+          <div class="hero-proof" aria-label="Product pipeline">
+            <span>Compile</span><i>→</i><span>Validate</span><i>→</i><span>Synthesize</span>
           </div>
         </div>
 
-        <div class="hero-machine reveal reveal-delay" aria-label="DAClaw workflow preview">
-          <div class="machine-toolbar">
-            <span class="machine-status"><i></i> Mission compiled · awaiting approval</span>
-            <span class="machine-id">WF / 07A4</span>
+        <div class="hero-shot reveal reveal-delay" aria-label="DAClaw Mission Control">
+          <div class="browser-frame tilt">
+            <div class="frame-bar"><i></i><i></i><i></i><span>daclaw · Mission Control</span></div>
+            <img
+              src="assets/screens/data-analysis.png"
+              alt="DAClaw Mission Control — one question compiled into a typed workflow awaiting approval"
+              loading="eager"
+            />
           </div>
-          <div class="machine-canvas">
-            <svg class="machine-lines" viewBox="0 0 700 520" role="presentation">
-              <defs>
-                <linearGradient id="flow" x1="0" x2="1">
-                  <stop offset="0" stop-color="#0b7261" />
-                  <stop offset="0.55" stop-color="#f0442d" />
-                  <stop offset="1" stop-color="#d5e33f" />
-                </linearGradient>
-              </defs>
-              <path d="M118 160 C220 160 205 260 310 260" />
-              <path d="M118 350 C220 350 205 260 310 260" />
-              <path d="M405 260 C490 260 470 125 590 125" />
-              <path d="M405 260 C500 260 500 260 590 260" />
-              <path d="M405 260 C490 260 470 395 590 395" />
-            </svg>
-            <div class="flow-node node-data">
-              <small>Source 01</small><strong>Data tables</strong><span>5 connected</span>
-            </div>
-            <div class="flow-node node-knowledge">
-              <small>Source 02</small><strong>Knowledge</strong><span>Policy + research</span>
-            </div>
-            <div class="flow-core"><span>DA</span><small>validated</small></div>
-            <div class="flow-node node-dashboard"><small>Artifact</small><strong>Dashboard</strong></div>
-            <div class="flow-node node-report"><small>Artifact</small><strong>Report</strong></div>
-            <div class="flow-node node-story"><small>Artifact</small><strong>Data video</strong></div>
-            <div class="machine-caption">
-              <span>Compile</span><span>Validate</span><span>Steer</span><span>Execute</span>
-            </div>
-          </div>
+          <div class="float-pill float-pill-a"><i></i> Mission compiled · awaiting approval</div>
+          <div class="float-pill float-pill-b"><b>4</b> layers · 6 nodes · 2 parallel</div>
         </div>
+      </section>
+
+      <section class="statband reveal">
+        <div><b data-count="3">3</b><small>Primary boards</small></div>
+        <div><b data-count="15">15</b><small>Agent data tools</small></div>
+        <div><b data-count="16">16</b><small>Benchmarks</small></div>
+        <div><b data-count="9">9</b><small>Agent harnesses</small></div>
+        <div><b data-count="22">22</b><small>Models scored</small></div>
+        <div><b>100%</b><small>Local &amp; offline</small></div>
       </section>
 
       <section class="ticker" aria-label="DAClaw capability ticker">
         <div class="ticker-track">
           <span>Approve &amp; run</span><i>✦</i><span>Node inspector</span><i>✦</i><span>Parallel queries</span><i>✦</i>
           <span>Grounded SQL</span><i>✦</i><span>Knowledge fusion</span><i>✦</i><span>Native Excel</span><i>✦</i>
-          <span>Auto-DBT</span><i>✦</i><span>Narrated data video</span><i>✦</i><span>Self-improving skills</span><i>✦</i>
-          <span>Benchmark matrix</span><i>✦</i>
+          <span>Auto-DBT lineage</span><i>✦</i><span>Live DCF engine</span><i>✦</i><span>Narrated data video</span><i>✦</i>
+          <span>Self-improving skills</span><i>✦</i><span>Model × harness</span><i>✦</i>
           <span>Approve &amp; run</span><i>✦</i><span>Node inspector</span><i>✦</i><span>Parallel queries</span><i>✦</i>
           <span>Grounded SQL</span><i>✦</i><span>Knowledge fusion</span><i>✦</i><span>Native Excel</span><i>✦</i>
-          <span>Auto-DBT</span><i>✦</i><span>Narrated data video</span><i>✦</i><span>Self-improving skills</span><i>✦</i>
-          <span>Benchmark matrix</span><i>✦</i>
+          <span>Auto-DBT lineage</span><i>✦</i><span>Live DCF engine</span><i>✦</i><span>Narrated data video</span><i>✦</i>
+          <span>Self-improving skills</span><i>✦</i><span>Model × harness</span><i>✦</i>
         </div>
       </section>
 
@@ -130,52 +127,258 @@
           <span class="section-index">01 / SYSTEM</span>
           <h2>Not a chatbot.<br /><em>A mission control.</em></h2>
           <p>
-            Linear chat hides the work. DAClaw runs a transparent loop — connect the ground truth, compile and
-            steer the plan, then execute and deliver. Every step is inspectable, and nothing heavy runs until
-            you approve it.
+            Linear chat hides the work. DAClaw runs a transparent loop — ground the truth, compile and validate
+            the plan, then execute and deliver. Every step is inspectable, and nothing heavy runs until you approve it.
           </p>
         </div>
+
         <div class="pillar-grid">
           <article class="pillar-card reveal">
             <span class="pillar-step">STEP 01</span>
-            <div class="card-icon">⌗</div>
             <h3>Connect &amp; Ground</h3>
             <p>
-              Attach tables, warehouses (Postgres, MySQL, Snowflake, DuckDB…), and a local knowledge corpus of
-              PDF, DOCX, Markdown, JSON, and HTML. Every answer is grounded in read-only SQL and cited evidence.
+              Attach tables and warehouses (Postgres, MySQL, DuckDB, SQLite, CSV/Parquet/Excel) plus a local
+              corpus of PDF, DOCX, Markdown, JSON, and HTML. Every answer is grounded in read-only SQL and cited evidence.
             </p>
             <div class="pillar-tags"><span>Live databases</span><span>Local files</span><span>Knowledge fusion</span></div>
           </article>
           <article class="pillar-card reveal reveal-delay-1">
             <span class="pillar-step">STEP 02</span>
-            <div class="card-icon">⌘</div>
-            <h3>Compile &amp; Steer</h3>
+            <h3>Compile &amp; Validate</h3>
             <p>
-              One question compiles into a typed workflow DAG. DAClaw validates dependencies, cycles, and
-              execution layers, opens a node inspector on every step, asks clarifying questions when it must —
-              and waits for your <b>Approve &amp; Run</b>.
+              One question compiles into a typed workflow DAG. DAClaw checks dependencies, cycles, and evidence,
+              opens a node inspector on every step, asks a clarifying question when intent is ambiguous — then waits
+              for <b>Approve &amp; Run</b>.
             </p>
             <div class="pillar-tags"><span>Typed DAG</span><span>Node inspector</span><span>Approve gate</span></div>
           </article>
           <article class="pillar-card reveal reveal-delay-2">
             <span class="pillar-step">STEP 03</span>
-            <div class="card-icon">◫</div>
             <h3>Execute &amp; Deliver</h3>
             <p>
               Independent branches run in parallel, then converge into dashboards, reports, native Excel, dbt
-              pipelines, and narrated data videos. Solved a hard task? The agent saves a quality-validated skill
-              for next time.
+              pipelines, and narrated data videos. Solve a hard task once and the agent saves a validated skill for next time.
             </p>
             <div class="pillar-tags"><span>Parallel runs</span><span>Six artifact types</span><span>Self-improving</span></div>
           </article>
+        </div>
+
+        <div class="compiled-strip reveal" aria-label="Example compiled mission">
+          <div class="strip-head"><span class="strip-dot"></span> COMPILED MISSION · read-only · awaiting approval</div>
+          <div class="strip-nodes">
+            <span class="wf-node">Read data source</span>
+            <i>→</i>
+            <span class="wf-node">Profile data</span>
+            <i>→</i>
+            <span class="wf-node wf-run">Run grounded analysis</span>
+            <i>→</i>
+            <span class="wf-node">Compose dashboard</span>
+            <span class="wf-approve">Approve &amp; Run</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="boards" class="boards section-shell">
+        <div class="section-intro reveal">
+          <span class="section-index">02 / BOARDS</span>
+          <h2>Three boards.<br /><em>The whole data lifecycle.</em></h2>
+          <p>DAClaw isn't one trick. It ships as three working surfaces that carry a question from raw table to peer-reviewed benchmark.</p>
+        </div>
+        <div class="board-grid">
+          <article class="board-card reveal">
+            <div class="board-shot">
+              <img src="assets/screens/data-analysis.png" alt="DAClaw Data Analysis board — agentic mission control" loading="lazy" />
+            </div>
+            <div class="board-body">
+              <span class="board-route">/data-agent</span>
+              <h3>Data Analysis</h3>
+              <p>
+                The agentic workbench. Connect data, ask in plain language, and one chat auto-decides when to run SQL,
+                draw a chart, assemble a dashboard, write a report, build a workbook, or narrate a data video.
+              </p>
+              <div class="board-tags"><span>Grounded chat</span><span>Evidence chain</span><span>Six artifacts</span></div>
+            </div>
+          </article>
+          <article class="board-card reveal reveal-delay-1">
+            <div class="board-shot">
+              <img src="assets/screens/pipeline-studio.png" alt="DAClaw Data Engineering board — Auto-DBT pipeline studio" loading="lazy" />
+            </div>
+            <div class="board-body">
+              <span class="board-route">/etl</span>
+              <h3>Data Engineering</h3>
+              <p>
+                Auto-DBT. Describe a goal in one sentence and the agent designs layered dbt models —
+                staging → intermediate → marts — resolves <code>ref()</code>/<code>source()</code> into a lineage DAG,
+                and materializes each into a real table.
+              </p>
+              <div class="board-tags"><span>Layered dbt</span><span>Lineage DAG</span><span>Real project export</span></div>
+            </div>
+          </article>
+          <article class="board-card reveal reveal-delay-2">
+            <div class="board-shot">
+              <img src="assets/screens/benchmark.png" alt="DAClaw Research board — model × harness leaderboard" loading="lazy" />
+            </div>
+            <div class="board-body">
+              <span class="board-route">/research</span>
+              <h3>Research</h3>
+              <p>
+                Proof and provenance. A Model × Harness leaderboard across the full-stack benchmark taxonomy, plus a
+                data-synthesis workbench that fabricates training data and research tables — jsonl, csv, xlsx, parquet.
+              </p>
+              <div class="board-tags"><span>Leaderboard</span><span>Data synthesis</span><span>DA-Omni taxonomy</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="capabilities" class="capabilities section-shell">
+        <div class="section-intro compact reveal">
+          <span class="section-index">03 / CAPABILITIES</span>
+          <h2>From raw input<br />to decision artifact.</h2>
+        </div>
+        <div class="cap-grid">
+          <article class="cap-card reveal">
+            <span class="cap-code">01</span>
+            <h3>Agentic Mission Compile</h3>
+            <p>One question becomes a typed workflow DAG — validated for dependencies, cycles, and evidence, and shown before a single tool runs.</p>
+            <span class="cap-tag">Approve &amp; Run</span>
+          </article>
+          <article class="cap-card reveal">
+            <span class="cap-code">02</span>
+            <h3>Grounded Evidence Chain</h3>
+            <p>Every chart and report number is bound to the exact SQL that produced it. Runs are replayable. No hallucinated figures.</p>
+            <span class="cap-tag">Read-only SQL</span>
+          </article>
+          <article class="cap-card reveal">
+            <span class="cap-code">03</span>
+            <h3>Node Inspector</h3>
+            <p>Click any step to see its inputs, the SQL executed, live status, and an output preview — full per-node transparency.</p>
+            <span class="cap-tag">Per-node</span>
+          </article>
+          <article class="cap-card reveal">
+            <span class="cap-code">04</span>
+            <h3>Auto-DBT Lineage</h3>
+            <p>Natural language to layered dbt models with <code>ref()</code>/<code>source()</code> lineage, topologically run and materialized as real tables.</p>
+            <span class="cap-tag">staging · marts</span>
+          </article>
+          <article class="cap-card reveal">
+            <span class="cap-code">05</span>
+            <h3>Live Formula Engine</h3>
+            <p>Build a computable DCF/LBO from real <code>=formulas</code>, recalculated offline to prove it computes — with a hardcoding detector and <code>#DIV/0!</code> repair.</p>
+            <span class="cap-tag">DCF · LBO</span>
+          </article>
+          <article class="cap-card reveal">
+            <span class="cap-code">06</span>
+            <h3>Native Excel</h3>
+            <p>Editable charts and multi-sheet dashboards written as real <code>.xlsx</code> — openpyxl workbooks with live chart XML, not screenshots.</p>
+            <span class="cap-tag">Real XLSX</span>
+          </article>
+          <article class="cap-card reveal">
+            <span class="cap-code">07</span>
+            <h3>Narrated Data Video</h3>
+            <p>Turn query-backed evidence into a cinematic, auto-advancing narrative with KPI scenes and per-scene voice-over — a data story that plays like a film.</p>
+            <span class="cap-tag">Per-scene TTS</span>
+          </article>
+          <article class="cap-card reveal">
+            <span class="cap-code">08</span>
+            <h3>Knowledge Fusion</h3>
+            <p>Search PDF, DOCX, Markdown, JSON, and HTML alongside structured data — fully local, so the corpus never leaves the machine.</p>
+            <span class="cap-tag">Local-first</span>
+          </article>
+          <article class="cap-card reveal">
+            <span class="cap-code">09</span>
+            <h3>Self-Improving Skills</h3>
+            <p>After solving a non-trivial task, DAClaw saves a reusable skill — kept only if it passes a quality gate — and reuses it next time.</p>
+            <span class="cap-tag">Quality-gated</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="interface" class="interface section-shell">
+        <div class="section-intro reveal">
+          <span class="section-index">04 / INTERFACE</span>
+          <h2>One system.<br /><em>Every working surface.</em></h2>
+          <p>Actual DAClaw interfaces — no concept renders.</p>
+        </div>
+        <div class="product-tabs" role="tablist" aria-label="DAClaw product screens">
+          <button class="active" type="button" role="tab" aria-selected="true" data-screen="analysis">Mission Control</button>
+          <button type="button" role="tab" aria-selected="false" data-screen="inspector">Node Inspector</button>
+          <button type="button" role="tab" aria-selected="false" data-screen="pipeline">Pipeline Studio</button>
+          <button type="button" role="tab" aria-selected="false" data-screen="benchmark">Benchmark Matrix</button>
+          <button type="button" role="tab" aria-selected="false" data-screen="story">Data Video</button>
+        </div>
+        <div class="product-frame reveal">
+          <div class="frame-bar"><i></i><i></i><i></i><span id="screen-label">Mission Control</span></div>
+          <img id="product-screen" src="assets/screens/data-analysis.png" alt="DAClaw Mission Control interface with a compiled workflow awaiting approval" />
+        </div>
+        <div class="product-caption">
+          <span id="screen-number">01</span>
+          <p id="screen-copy">Compile a data mission, review the typed workflow with its execution layers and parallel branches, then hit Approve &amp; Run.</p>
+        </div>
+      </section>
+
+      <section id="research" class="research section-shell">
+        <div class="research-inner">
+          <div class="research-copy reveal">
+            <span class="section-index alt">05 / RESEARCH PLATFORM</span>
+            <h2>A workbench that<br /><em>measures itself.</em></h2>
+            <p>
+              DAClaw is also a full-stack data-agent research platform. The same product surfaces feed an evaluation
+              cockpit that scores every <b>model × harness</b> across the entire data-agent lifecycle — and routes what
+              it learns back into the workflows, tools, and playbooks the agent uses.
+            </p>
+            <ul class="research-points">
+              <li><b>Model × Harness × Benchmark matrix</b> — one grid, the whole field.</li>
+              <li><b>Full-stack taxonomy</b> — Atomic · Engineering · Analysis · Visualization.</li>
+              <li><b>Data synthesis</b> — text2sql, QA, instruction &amp; research tables to jsonl/csv/xlsx/parquet.</li>
+              <li><b>Calibrated protocol</b> — Completion · Validity · Editability, set to reported SOTA.</li>
+            </ul>
+            <div class="research-actions">
+              <a class="button button-lime" href="#interface">See the leaderboard <span>↗</span></a>
+            </div>
+          </div>
+
+          <aside class="cockpit reveal reveal-delay" aria-label="Research cockpit">
+            <div class="cockpit-head">
+              <span class="cockpit-dot"></span>
+              <span>RESEARCH COCKPIT</span>
+              <span class="cockpit-id">Full-Stack Data-Agent Eval</span>
+            </div>
+            <div class="cockpit-stats">
+              <div><b>22</b><small>Models</small></div>
+              <div><b>9</b><small>Harnesses</small></div>
+              <div><b>16</b><small>Benchmarks</small></div>
+              <div><b>4</b><small>Capabilities</small></div>
+            </div>
+            <div class="cockpit-block">
+              <span class="cockpit-label">Benchmark taxonomy</span>
+              <div class="taxo">
+                <div class="taxo-row"><span class="taxo-tag l1">L1 · Atomic</span><span class="taxo-desc">Spider · BIRD · Spider 2.0 · DA-Code</span></div>
+                <div class="taxo-row"><span class="taxo-tag l2">L2 · Engineering</span><span class="taxo-desc">DAComp-DE · KramaBench · BIRD-Critic</span></div>
+                <div class="taxo-row"><span class="taxo-tag l3">L3 · Analysis</span><span class="taxo-desc">DAComp-DA · DABench · DSBench</span></div>
+                <div class="taxo-row"><span class="taxo-tag viz">Text-to-Viz</span><span class="taxo-desc">DV-World · chart &amp; dashboard gen</span></div>
+              </div>
+            </div>
+            <div class="cockpit-block">
+              <span class="cockpit-label">Evaluation protocol</span>
+              <div class="metric">
+                <div class="metric-row"><span>Completion</span><div class="bar"><i style="--w:72%"></i></div><b>72%</b></div>
+                <div class="metric-row"><span>Validity</span><div class="bar"><i style="--w:64%"></i></div><b>64%</b></div>
+                <div class="metric-row"><span>Editability</span><div class="bar"><i style="--w:58%"></i></div><b>58%</b></div>
+              </div>
+            </div>
+            <div class="cockpit-loop">
+              <span>Evaluation</span><b>→</b><span>Workflow</span><b>→</b><span>Tools</span><b>→</b><span>Playbooks</span>
+            </div>
+          </aside>
         </div>
       </section>
 
       <section id="demo" class="demo section-shell">
         <div class="demo-heading reveal">
-          <span class="section-index">02 / PRODUCT FILM</span>
-          <h2>Your demo belongs<br />on the biggest screen.</h2>
-          <p>The video stage is ready. Add one file or URL in <code>site-config.js</code> and the placeholder becomes the player.</p>
+          <span class="section-index">06 / PRODUCT FILM</span>
+          <h2>See it compile<br />a mission live.</h2>
+          <p>The cinematic stage is wired. Add one file or URL in <code>site-config.js</code> and the placeholder becomes the player.</p>
         </div>
         <div class="video-stage reveal reveal-delay">
           <video id="demo-video" controls playsinline preload="metadata" poster="assets/video-poster.svg"></video>
@@ -190,146 +393,6 @@
             </div>
           </div>
           <div class="video-corners" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-        </div>
-      </section>
-
-      <section id="capabilities" class="capabilities section-shell">
-        <div class="section-intro compact reveal">
-          <span class="section-index">03 / CAPABILITIES</span>
-          <h2>From raw input<br />to decision artifact.</h2>
-        </div>
-        <div class="capability-list">
-          <article class="capability-row reveal">
-            <span class="cap-code">A / 01</span><h3>Grounded Analysis</h3>
-            <p>Multi-table read-only SQL over DuckDB and live warehouses, profiling, charts, dashboards, reports — every result backed by a replayable evidence trail.</p>
-            <span class="cap-tag">DuckDB + SQL</span>
-          </article>
-          <article class="capability-row reveal">
-            <span class="cap-code">A / 02</span><h3>Approve &amp; Run Plans</h3>
-            <p>The compiled workflow is shown before execution. Review layers, remove optional nodes, reconnect the flow, then approve — nothing heavy runs until you say go.</p>
-            <span class="cap-tag">Human-in-the-loop</span>
-          </article>
-          <article class="capability-row reveal">
-            <span class="cap-code">A / 03</span><h3>Node Inspector</h3>
-            <p>Click any step to see its inputs, the exact SQL executed, live status, and an output preview. Full per-node transparency, DeepEye-style.</p>
-            <span class="cap-tag">Evidence chain</span>
-          </article>
-          <article class="capability-row reveal">
-            <span class="cap-code">A / 04</span><h3>Parallel &amp; Clarify</h3>
-            <p>Independent query branches execute concurrently, and the agent pauses to ask focused clarifying questions whenever your intent is ambiguous.</p>
-            <span class="cap-tag">Concurrent</span>
-          </article>
-          <article class="capability-row reveal">
-            <span class="cap-code">A / 05</span><h3>Knowledge Fusion</h3>
-            <p>Search PDFs, DOCX, Markdown, JSON, and HTML alongside structured data — fully local, so the corpus never leaves the machine.</p>
-            <span class="cap-tag">Local-first</span>
-          </article>
-          <article class="capability-row reveal">
-            <span class="cap-code">A / 06</span><h3>Pipeline Studio</h3>
-            <p>Natural language to staging, intermediate, and marts dbt models with ref/source lineage and real materialization.</p>
-            <span class="cap-tag">Auto-DBT</span>
-          </article>
-          <article class="capability-row reveal">
-            <span class="cap-code">A / 07</span><h3>Native Excel</h3>
-            <p>Editable charts, formula-driven financial models, offline recalculation, audit, repair, and verification — real XLSX, not screenshots.</p>
-            <span class="cap-tag">XLSX</span>
-          </article>
-          <article class="capability-row reveal">
-            <span class="cap-code">A / 08</span><h3>Narrated Data Video</h3>
-            <p>Turn query-backed evidence into an autoplay narrative with KPI scenes, charts, and per-scene voice-over that advances itself — a data story that plays like a film.</p>
-            <span class="cap-tag">Cinematic + TTS</span>
-          </article>
-          <article class="capability-row reveal">
-            <span class="cap-code">A / 09</span><h3>Self-Improving Skills</h3>
-            <p>After solving a non-trivial task, DAClaw saves a reusable skill — kept only if it passes quality validation — and reuses it on the next mission.</p>
-            <span class="cap-tag">Quality-gated</span>
-          </article>
-          <article class="capability-row reveal">
-            <span class="cap-code">A / 10</span><h3>Benchmark Lab</h3>
-            <p>Compare models, agent harnesses, and full-stack data-agent benchmarks across atomic, engineering, analysis, and visualization tasks.</p>
-            <span class="cap-tag">Model × Harness</span>
-          </article>
-        </div>
-      </section>
-
-      <section id="product" class="product section-shell">
-        <div class="product-heading reveal">
-          <span class="section-index">04 / INTERFACE</span>
-          <h2>One system.<br />Every working surface.</h2>
-          <p>Actual DAClaw interfaces — no concept renders.</p>
-        </div>
-        <div class="product-tabs" role="tablist" aria-label="DAClaw product screens">
-          <button class="active" type="button" role="tab" aria-selected="true" data-screen="analysis">Mission Control</button>
-          <button type="button" role="tab" aria-selected="false" data-screen="inspector">Node Inspector</button>
-          <button type="button" role="tab" aria-selected="false" data-screen="pipeline">Pipeline Studio</button>
-          <button type="button" role="tab" aria-selected="false" data-screen="benchmark">Benchmark Matrix</button>
-          <button type="button" role="tab" aria-selected="false" data-screen="story">Data Video</button>
-        </div>
-        <div class="product-frame reveal">
-          <div class="frame-top"><i></i><i></i><i></i><span id="screen-label">Mission Control</span></div>
-          <img id="product-screen" src="assets/screens/data-analysis.png" alt="DAClaw Mission Control interface with a compiled workflow awaiting approval" />
-        </div>
-        <div class="product-caption">
-          <span id="screen-number">01</span>
-          <p id="screen-copy">Compile a data mission, review the typed workflow with its execution layers and parallel branches, then hit Approve &amp; Run.</p>
-        </div>
-      </section>
-
-      <section id="research" class="research">
-        <div class="research-inner section-shell">
-          <div class="research-copy reveal">
-            <span class="section-index alt">05 / RESEARCH PLATFORM</span>
-            <h2>A workbench that<br /><em>measures itself.</em></h2>
-            <p>
-              DAClaw is also a full-stack data-agent research platform. The same product surfaces feed an
-              evaluation cockpit that scores every <b>model × harness</b> across the entire data-agent
-              lifecycle — and routes what it learns back into the workflows, tools, and playbooks the agent uses.
-            </p>
-            <ul class="research-points">
-              <li><b>Model × Harness × Benchmark matrix</b> — one grid, the whole field.</li>
-              <li><b>Full-stack taxonomy</b> — SQL · Analysis · Data Engineering · Spreadsheet · Visualization.</li>
-              <li><b>Trajectory &amp; artifact diagnostics</b> — grade the path, not just the answer.</li>
-              <li><b>Evaluation protocol</b> — Completion · Validity · Editability, calibrated to reported SOTA.</li>
-              <li><b>Closed loop</b> — evaluation feeds back into workflow, tools, and playbooks.</li>
-            </ul>
-            <div class="research-actions">
-              <a class="button button-lime" href="#product">See the leaderboard <span>↗</span></a>
-            </div>
-          </div>
-
-          <aside class="cockpit reveal reveal-delay" aria-label="Research cockpit">
-            <div class="cockpit-head">
-              <span class="cockpit-dot"></span>
-              <span>RESEARCH COCKPIT</span>
-              <span class="cockpit-id">Full-Stack Data-Agent Eval</span>
-            </div>
-            <div class="cockpit-stats">
-              <div><b>22</b><small>Models</small></div>
-              <div><b>9</b><small>Harnesses</small></div>
-              <div><b>16</b><small>Benchmarks</small></div>
-              <div><b>5</b><small>Capabilities</small></div>
-            </div>
-            <div class="cockpit-block">
-              <span class="cockpit-label">Benchmark taxonomy</span>
-              <div class="taxo">
-                <div class="taxo-row"><span class="taxo-tag l1">L1 · Atomic</span><span class="taxo-desc">Spider · BIRD · Spider 2.0 · DA-Code</span></div>
-                <div class="taxo-row"><span class="taxo-tag l2">L2 · Engineering</span><span class="taxo-desc">DAComp-DE · KramaBench · BIRD-Critic</span></div>
-                <div class="taxo-row"><span class="taxo-tag l3">L3 · Analysis</span><span class="taxo-desc">DAComp-DA · DABench · DSBench</span></div>
-                <div class="taxo-row"><span class="taxo-tag viz">Text-to-Viz</span><span class="taxo-desc">DV-World · chart &amp; dashboard gen</span></div>
-              </div>
-            </div>
-            <div class="cockpit-block">
-              <span class="cockpit-label">Evaluation protocol</span>
-              <div class="metric">
-                <div class="metric-row"><span>Completion</span><div class="bar"><i style="width:72%"></i></div><b>72%</b></div>
-                <div class="metric-row"><span>Validity</span><div class="bar"><i style="width:64%"></i></div><b>64%</b></div>
-                <div class="metric-row"><span>Editability</span><div class="bar"><i style="width:58%"></i></div><b>58%</b></div>
-              </div>
-            </div>
-            <div class="cockpit-loop">
-              <span>Evaluation</span><b>→</b><span>Workflow</span><b>→</b><span>Tools</span><b>→</b><span>Playbooks</span>
-            </div>
-          </aside>
         </div>
       </section>
 
@@ -360,7 +423,7 @@
     <footer class="site-footer">
       <a class="brand footer-brand" href="#top"><span class="brand-mark">DA</span><span class="brand-word">DAClaw</span></a>
       <p>Steerable data agent &amp; research platform by DA-Open.</p>
-      <div><a href="https://github.com/DA-Open">GitHub</a><a href="#top">Back to top ↑</a></div>
+      <div><a href="https://github.com/DA-Open/DAClaw">DAClaw repo</a><a href="https://github.com/DA-Open">DA-Open</a><a href="#top">Back to top ↑</a></div>
     </footer>
 
     <script src="site-config.js"></script>

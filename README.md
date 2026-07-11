@@ -11,8 +11,8 @@ repository root directly — no Jekyll, no bundler, no CI step.
 | File | Purpose |
 | --- | --- |
 | `index.html` | Page markup and content |
-| `styles.css` | Full design system (warm-ivory / vermilion / ink-green / acid-lime editorial theme) |
-| `script.js` | Scroll progress, reveal-on-scroll, mobile nav, product-screen tabs, video wiring |
+| `styles.css` | Full design system — dark-slate workspace, teal/cyan accent, blue→teal→violet gradient headings, 42px grid (matched to the DAClaw product UI) |
+| `script.js` | Scroll progress, sticky-header shadow, reveal-on-scroll, stat count-up, animated metric bars, mobile nav, product-screen tabs, video wiring |
 | `site-config.js` | Single place to plug in the demo video |
 | `assets/` | Favicon, video poster, and real DAClaw product screenshots |
 

@@ -1,5 +1,6 @@
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+/* ---- Mobile nav --------------------------------------------------------- */
 const navToggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".site-nav");
 navToggle?.addEventListener("click", () => {
@@ -7,35 +8,81 @@ navToggle?.addEventListener("click", () => {
   navToggle.setAttribute("aria-expanded", String(!open));
   nav?.classList.toggle("open", !open);
 });
-nav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => {
-  navToggle?.setAttribute("aria-expanded", "false");
-  nav.classList.remove("open");
-}));
+nav?.querySelectorAll("a").forEach((link) =>
+  link.addEventListener("click", () => {
+    navToggle?.setAttribute("aria-expanded", "false");
+    nav.classList.remove("open");
+  }),
+);
 
+/* ---- Scroll progress + sticky-header shadow ----------------------------- */
 const progress = document.querySelector(".scroll-progress span");
-const updateProgress = () => {
+const header = document.querySelector(".site-header");
+const onScroll = () => {
   const max = document.documentElement.scrollHeight - window.innerHeight;
   const ratio = max > 0 ? window.scrollY / max : 0;
   if (progress) progress.style.transform = `scaleX(${ratio})`;
+  header?.classList.toggle("scrolled", window.scrollY > 12);
 };
-window.addEventListener("scroll", updateProgress, { passive: true });
-updateProgress();
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll();
 
-const reveals = document.querySelectorAll(".reveal");
-if (reduceMotion) {
-  reveals.forEach((el) => el.classList.add("visible"));
-} else {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  reveals.forEach((el) => observer.observe(el));
+/* ---- Count-up for the stat band ----------------------------------------- */
+function countUp(el) {
+  const target = Number(el.dataset.count);
+  if (!Number.isFinite(target) || reduceMotion) {
+    el.textContent = String(target);
+    return;
+  }
+  const duration = 1100;
+  const start = performance.now();
+  const step = (now) => {
+    const t = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - t, 3);
+    el.textContent = String(Math.round(target * eased));
+    if (t < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
 }
 
+/* ---- Reveal on scroll (also triggers bar fills + count-ups) ------------- */
+const reveals = document.querySelectorAll(".reveal");
+const activate = (el) => {
+  el.classList.add("visible");
+  el.querySelectorAll?.(".bar i").forEach((bar) => bar.classList.add("fill"));
+};
+if (reduceMotion) {
+  reveals.forEach(activate);
+  document.querySelectorAll(".statband [data-count]").forEach(countUp);
+} else {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          activate(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 },
+  );
+  reveals.forEach((el) => observer.observe(el));
+
+  const statObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          countUp(entry.target);
+          statObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.6 },
+  );
+  document.querySelectorAll(".statband [data-count]").forEach((el) => statObserver.observe(el));
+}
+
+/* ---- Demo video wiring -------------------------------------------------- */
 const video = document.querySelector("#demo-video");
 const placeholder = document.querySelector("#video-placeholder");
 const videoSrc = window.DACLAW_SITE?.videoSrc?.trim();
@@ -47,12 +94,12 @@ if (video && videoSrc) {
   video?.removeAttribute("controls");
 }
 document.querySelector("#placeholder-play")?.addEventListener("click", () => {
-  document.querySelector("#video-placeholder strong")?.animate(
-    [{ opacity: 1 }, { opacity: 0.35 }, { opacity: 1 }],
-    { duration: 700, easing: "ease-out" },
-  );
+  document
+    .querySelector("#video-placeholder strong")
+    ?.animate([{ opacity: 1 }, { opacity: 0.35 }, { opacity: 1 }], { duration: 700, easing: "ease-out" });
 });
 
+/* ---- Product interface tabs --------------------------------------------- */
 const screens = {
   analysis: {
     src: "assets/screens/data-analysis.png",
@@ -72,22 +119,22 @@ const screens = {
     src: "assets/screens/pipeline-studio.png",
     label: "Pipeline Studio",
     number: "03",
-    copy: "Generate and inspect a real dependency-aware dbt pipeline with staging, intermediate, and marts layers and full lineage.",
-    alt: "DAClaw Pipeline Studio interface",
+    copy: "Describe a goal in one sentence — the agent designs layered dbt models (staging → intermediate → marts) and materializes each into a real table with a ref() lineage DAG.",
+    alt: "DAClaw Pipeline Studio building an Auto-DBT data pipeline",
   },
   benchmark: {
     src: "assets/screens/benchmark.png",
     label: "Benchmark Matrix",
     number: "04",
     copy: "Score every model and harness across the full-stack taxonomy — L1 Atomic, L2 Engineering, L3 Analysis, and Text-to-Viz.",
-    alt: "DAClaw Benchmark Matrix showing the data-agent taxonomy",
+    alt: "DAClaw Data Agent Leaderboard showing model × harness scores",
   },
   story: {
     src: "assets/screens/data-story.png",
     label: "Data Video",
     number: "05",
-    copy: "Turn grounded evidence into an autoplay, narrated narrative with KPI scenes and charts — a data story that plays like a film.",
-    alt: "DAClaw narrated Data Video interface",
+    copy: "Turn grounded evidence into an autoplay, narrated narrative with KPI scenes and per-scene voice-over — a data story that plays like a film.",
+    alt: "DAClaw narrated Data Video with a KPI takeaway scene",
   },
 };
 const screenImage = document.querySelector("#product-screen");
