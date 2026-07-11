@@ -1414,12 +1414,379 @@ h2 em {
   border-color: var(--red);
 }
 
+/* ---------- Pillar grid (Connect / Compile / Execute) ---------- */
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+
+.pillar-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.7rem 1.9rem;
+  background: var(--paper-2);
+  border: 1.6px solid var(--ink);
+  border-radius: var(--radius);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+  overflow: hidden;
+}
+
+.pillar-card::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 6px;
+}
+
+.pillar-card:nth-child(1)::after {
+  background: var(--green);
+}
+.pillar-card:nth-child(2)::after {
+  background: var(--red);
+}
+.pillar-card:nth-child(3)::after {
+  background: var(--lime);
+}
+
+.pillar-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hard);
+}
+
+.pillar-step {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.pillar-card .card-icon {
+  margin: 1.1rem 0 1.2rem;
+}
+
+.pillar-card h3 {
+  font-size: 1.7rem;
+  margin-bottom: 0.75rem;
+}
+
+.pillar-card p {
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  flex: 1;
+}
+
+.pillar-card p b {
+  color: var(--red-deep);
+  font-weight: 600;
+}
+
+.pillar-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1.5rem;
+}
+
+.pillar-tags span {
+  padding: 0.32rem 0.62rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  background: rgba(23, 32, 31, 0.06);
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+}
+
+/* ---------- Research platform section ---------- */
+.research {
+  margin: clamp(3rem, 7vw, 6rem) 0;
+  padding: clamp(3.5rem, 8vw, 6rem) 0;
+  background: var(--ink);
+  color: var(--paper);
+  border-top: 1.6px solid var(--ink);
+  border-bottom: 1.6px solid var(--ink);
+}
+
+.research-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.section-index.alt {
+  color: var(--lime);
+}
+
+.research-copy h2 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+}
+
+.research-copy h2 em {
+  color: var(--lime);
+}
+
+.research-copy > p {
+  margin-top: 1.4rem;
+  font-family: var(--font-serif);
+  font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+  line-height: 1.6;
+  color: rgba(242, 234, 219, 0.82);
+}
+
+.research-copy p b {
+  color: var(--paper-2);
+  font-weight: 600;
+}
+
+.research-points {
+  list-style: none;
+  margin: 1.8rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.research-points li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(242, 234, 219, 0.78);
+}
+
+.research-points li::before {
+  content: "◦";
+  position: absolute;
+  left: 0;
+  top: -0.05em;
+  color: var(--lime);
+  font-size: 1.1rem;
+}
+
+.research-points b {
+  color: var(--paper-2);
+  font-weight: 600;
+}
+
+.research-actions {
+  margin-top: 2rem;
+}
+
+.button-lime {
+  --btn-bg: var(--lime);
+  --btn-fg: var(--ink);
+  border-color: var(--lime);
+}
+
+.button-lime:hover {
+  box-shadow: 6px 6px 0 rgba(213, 227, 63, 0.35);
+}
+
+/* ---------- Research cockpit card ---------- */
+.cockpit {
+  border: 1.5px solid rgba(242, 234, 219, 0.16);
+  border-radius: var(--radius);
+  background: linear-gradient(165deg, #1e2a28, #141d1c);
+  padding: 1.4rem;
+  box-shadow: 0 30px 60px -40px rgba(0, 0, 0, 0.8);
+}
+
+.cockpit-head {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(242, 234, 219, 0.7);
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(242, 234, 219, 0.1);
+}
+
+.cockpit-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--lime);
+  box-shadow: 0 0 0 0 rgba(213, 227, 63, 0.5);
+  animation: pulse 2.4s infinite;
+}
+
+.cockpit-id {
+  margin-left: auto;
+  color: rgba(242, 234, 219, 0.45);
+  letter-spacing: 0.08em;
+  text-transform: none;
+}
+
+.cockpit-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(242, 234, 219, 0.1);
+}
+
+.cockpit-stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.cockpit-stats b {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  color: var(--lime);
+  line-height: 1;
+}
+
+.cockpit-stats small {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(242, 234, 219, 0.55);
+}
+
+.cockpit-block {
+  padding: 1.15rem 0;
+  border-bottom: 1px solid rgba(242, 234, 219, 0.1);
+}
+
+.cockpit-label {
+  display: block;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(242, 234, 219, 0.5);
+  margin-bottom: 0.8rem;
+}
+
+.taxo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.taxo-row {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.taxo-tag {
+  flex-shrink: 0;
+  width: 118px;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 7px;
+  color: var(--ink);
+}
+
+.taxo-tag.l1 {
+  background: #2dd4bf;
+}
+.taxo-tag.l2 {
+  background: #818cf8;
+}
+.taxo-tag.l3 {
+  background: #fbbf24;
+}
+.taxo-tag.viz {
+  background: #f472b6;
+}
+
+.taxo-desc {
+  font-size: 0.74rem;
+  color: rgba(242, 234, 219, 0.7);
+  line-height: 1.35;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.metric-row {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.74rem;
+}
+
+.metric-row span {
+  width: 78px;
+  color: rgba(242, 234, 219, 0.75);
+}
+
+.metric-row .bar {
+  flex: 1;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(242, 234, 219, 0.1);
+  overflow: hidden;
+}
+
+.metric-row .bar i {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--green), var(--lime));
+}
+
+.metric-row b {
+  width: 34px;
+  text-align: right;
+  color: var(--lime);
+  font-variant-numeric: tabular-nums;
+}
+
+.cockpit-loop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  padding-top: 1.15rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cockpit-loop span {
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(242, 234, 219, 0.07);
+  border: 1px solid rgba(242, 234, 219, 0.12);
+  color: rgba(242, 234, 219, 0.78);
+}
+
+.cockpit-loop b {
+  color: var(--lime);
+}
+
 /* ============================================================
    Responsive
    ============================================================ */
 @media (max-width: 1040px) {
   .system-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .pillar-grid {
+    grid-template-columns: 1fr;
+  }
+  .research-inner {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1527,6 +1894,13 @@ h2 em {
   }
   .site-footer div {
     margin-left: 0;
+  }
+  .cockpit-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.9rem;
+  }
+  .taxo-tag {
+    width: 96px;
   }
 }
 
